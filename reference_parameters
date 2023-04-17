@@ -1,0 +1,45 @@
+using System;
+
+namespace c09Parametry01
+{
+    class Program
+    {
+        static string Velka(string str, out int length)
+        {
+            length = str.Length;
+            return str.ToUpper();
+        }
+
+        static void Par1(int value)
+        {
+            value += 1;
+        }
+
+        static void Par2(ref int value)
+        {
+            value = 20;
+        }
+
+        static void Main(string[] args)
+        {
+            int i1 = 10;
+            Console.WriteLine("pred volanim");
+            Console.WriteLine("i1 = 10; {0}", i1);
+            Par1(i1);
+            Console.WriteLine("po volani");
+            Console.WriteLine("i1 += 1; {0}", i1);
+            int i2 = 10;
+            Console.WriteLine("pred volanim");
+            Console.WriteLine("i2 = 10; {0}", i2);
+            Par2(ref i2);
+            Console.WriteLine("po volani");
+            Console.WriteLine("i2 = 20; {0}", i2);
+            string s = "ahoj";
+            int l;
+            s = Velka(s, out l);
+            Console.WriteLine("vraceno: {0}, delka {1}", s, l);
+
+            Console.ReadKey();
+        }
+    }
+}
